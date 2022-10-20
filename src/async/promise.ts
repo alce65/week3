@@ -1,5 +1,3 @@
-import { errorMonitor } from 'events';
-
 const makeAsyncPromises = (): Promise<string> => {
     let data;
     return new Promise((resolve, reject) => {
@@ -30,13 +28,13 @@ makeAsyncPromises()
         console.log(error.message);
     });
 
-makeAsyncPromises()
-    .then((value) => {
-        console.log(+value * 2);
-    })
-    .catch((error: Error) => {
-        console.log(error.message);
-    });
+const p = makeAsyncPromises();
+
+p.then((value) => {
+    console.log(+value * 2);
+}).catch((error: Error) => {
+    console.log(error.message);
+});
 
 makeAsyncPromises()
     .then((value) => {

@@ -1,3 +1,4 @@
+"use strict";
 const makeAsyncPromises = () => {
     let data;
     return new Promise((resolve, reject) => {
@@ -25,11 +26,10 @@ makeAsyncPromises()
     .catch((error) => {
     console.log(error.message);
 });
-makeAsyncPromises()
-    .then((value) => {
+const p = makeAsyncPromises();
+p.then((value) => {
     console.log(+value * 2);
-})
-    .catch((error) => {
+}).catch((error) => {
     console.log(error.message);
 });
 makeAsyncPromises()
@@ -40,4 +40,3 @@ makeAsyncPromises()
     .catch((error) => {
     console.log(error.message);
 });
-export {};
