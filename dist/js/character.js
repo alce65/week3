@@ -1,4 +1,11 @@
 export class Character {
+    name;
+    family;
+    age;
+    lifeStatus;
+    message;
+    static serie = 'GoT';
+    friend;
     constructor(name, family, age) {
         this.name = name;
         this.family = family;
@@ -14,4 +21,3 @@ export class Character {
         this.lifeStatus = false;
     }
 }
-Character.serie = 'GoT';
